@@ -15,7 +15,44 @@
         </h1>
     </header>
 
+    <main>
+        <form action="#">
+            <h2>Add New Comment</h2>
+            <div class="row">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Your name" required />
+            </div>
+            <div class="row">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Your email address" required />
+            </div>
+            <div class="row">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" required></textarea>
+            </div>
 
+            <button type="submit">Add Comment</button>
+        </form>
+
+        <section class="comments">
+            <!-- 
+            1. I give the "user comment" element the information/data
+            2. It's the custom element's job to arrange and style the information/data for me! 
+            -->
+            <user-comment name="Julius" email="julius@gmail.com" comment="Here is my comment!"></user-comment>
+
+            <user-comment name="Adwaina" email="adwaina@gmail.com" comment="text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text"></user-comment>
+
+            <user-comment name="Kayla" email="kayla@gmail.com" comment="Another comment"></user-comment>
+
+            <user-comment name="Laciesha" email="laciesha@gmail.com" comment="text text text text text text text text text text text text text text text text text text text text text text text text"></user-comment>
+
+            <user-comment name="Monique" email="monique@gmail.com" comment="text text text text text text text text text text text text text text text text text text text text text text text text"></user-comment>
+        </section>
+    </main>
+
+
+    <script type="module" src="/comment.js"></script>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
