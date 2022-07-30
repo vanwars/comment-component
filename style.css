@@ -2,16 +2,22 @@ body {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: teal;
+    background: #F4F4F4;
     margin: 0;
 }
 header {
     text-align: center;
-    color: #000;
-    background: #fff;
+    color: #fff;
+    background: #c06666;
     margin-bottom: 40px;
-    padding-bottom: 20px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    padding: 20px;
+    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+}
+
+.icon {
+  width: 80px;
+  vertical-align: bottom;
+  display: none;
 }
 
 .row {
@@ -26,6 +32,7 @@ label {
     vertical-align: top;
 }
 input, textarea {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
     width: calc(100% - 150px);
     padding: 10px;
     font-size: 1.0em;
@@ -48,17 +55,12 @@ main {
     margin-right: 15vw;
 }
 
-.icon {
-  width: 80px;
-  vertical-align: bottom;
-}
-
 .comments, form {
     padding: 20px;
     background: #fff;
     border-radius: 5px;
     margin-bottom: 40px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
 }
 
 .comment {
@@ -85,7 +87,4 @@ main {
   margin: 0;
   margin-left: 60px;
   display: inline-block;
-}
-
-.comments {
 }
