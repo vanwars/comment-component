@@ -2,55 +2,81 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="icon" type="image/svg+xml" href="favicon.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Comment Component</title>
   </head>
   <body>
-
     <header>
-        <h1>
-            <img class="icon" src="favicon.jpg" />
-            Comment Demo (Pub / Sub)
-        </h1>
+      <h1>
+        <!-- <img class="icon" src="favicon.jpg" /> -->
+        <i class="far fa-comment"></i>
+        Comment Demo (Pub / Sub)
+      </h1>
     </header>
 
     <main>
-        <form action="#">
-            <h2>Add New Comment</h2>
-            <div class="row">
-                <label for="name">Name:</label>
-                <input type="text" id="name" placeholder="Your name" required />
-            </div>
-            <div class="row">
-                <label for="email">Email:</label>
-                <input type="email" id="email" placeholder="Your email address" required />
-            </div>
-            <div class="row">
-                <label for="comment">Comment:</label>
-                <textarea id="comment" required></textarea>
-            </div>
+      <form action="#">
+        <h2>Add New Comment</h2>
+        <div class="row">
+          <label for="name">Name:</label>
+          <input type="text" id="name" placeholder="Your name" required />
+        </div>
+        <div class="row">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Your email address"
+            required
+          />
+        </div>
+        <div class="row">
+          <label for="comment">Comment:</label>
+          <textarea id="comment" required></textarea>
+        </div>
 
-            <button type="submit">Add Comment</button>
-        </form>
+        <button type="submit">Add Comment</button>
+      </form>
 
-        <section class="comments">
-            <!-- 
+      <section class="comments">
+        <!-- 
             1. I give the "user comment" element the information/data
             2. It's the custom element's job to arrange and style the information/data for me! 
             -->
-            <user-comment name="Julius" email="julius@gmail.com" comment="Here is my comment!"></user-comment>
+        <user-comment
+          name="Julius"
+          email="julius@gmail.com"
+          comment="Here is my comment!"
+          date_time="Monday, July 23"
+        ></user-comment>
 
-            <user-comment name="Adwaina" email="adwaina@gmail.com" comment="text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text"></user-comment>
+        <user-comment
+          name="Adwaina"
+          email="adwaina@gmail.com"
+          comment="text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text"
+        ></user-comment>
 
-            <user-comment name="Kayla" email="kayla@gmail.com" comment="Another comment"></user-comment>
+        <user-comment
+          name="Kayla"
+          email="kayla@gmail.com"
+          comment="Another comment"
+        ></user-comment>
 
-            <user-comment name="Laciesha" email="laciesha@gmail.com" comment="text text text text text text text text text text text text text text text text text text text text text text text text"></user-comment>
+        <user-comment
+          name="Laciesha"
+          email="laciesha@gmail.com"
+          comment="text text text text text text text text text text text text text text text text text text text text text text text text"
+        ></user-comment>
 
-            <user-comment name="Monique" email="monique@gmail.com" comment="text text text text text text text text text text text text text text text text text text text text text text text text"></user-comment>
-        </section>
+        <user-comment
+          name="Monique"
+          email="monique@gmail.com"
+          comment="text text text text text text text text text text text text text text text text text text text text text text text text"
+        ></user-comment>
+      </section>
     </main>
-
 
     <script type="module" src="/comment.js"></script>
     <script type="module" src="/main.js"></script>
