@@ -1,7 +1,6 @@
 import './style.css'
 
-
-document.querySelector('form').addEventListener('submit', ev => {
+const addComment = ev => {
     ev.preventDefault();
 
     // get user inputs from the DOM:
@@ -16,4 +15,8 @@ document.querySelector('form').addEventListener('submit', ev => {
 
     // add the new tag to the DOM:
     document.querySelector('.comments').insertAdjacentHTML('afterbegin', template);
-});
+};
+
+
+
+document.querySelector('form').addEventListener('submit', addComment);
