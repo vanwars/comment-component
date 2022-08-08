@@ -1,4 +1,4 @@
-class Comment extends HTMLElement {
+export default class Comment extends HTMLElement {
   
     connectedCallback() {
       const rn = Math.random() * 100;
@@ -12,6 +12,8 @@ class Comment extends HTMLElement {
             </div>
           </div>
           <p class="comment-text">${this.getAttribute("comment")}</p>
+          <p>${this.getAttribute("timestamp")}</p>
+          
         </section>
         `;
     }

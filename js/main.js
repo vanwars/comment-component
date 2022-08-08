@@ -1,6 +1,9 @@
 import '../style.css'
-import StateManager from 'state-manager.js'
-import CommentList from 'comment-list.js'
+import './comment.js'
+import StateManager from './state-manager.js'
+import CommentList from './comment-list.js'
+import Form from './form-component';
+import Counter from './counter.js';
 
 /*
 Goal:
@@ -11,36 +14,6 @@ Goal:
 */
 
 const stateManager = new StateManager();
-const commentList = new CommentList(stateManager.comments);
-
-
-
-
-
-
-
-
-
-
-
-
-// const addComment = ev => {
-//     ev.preventDefault();
-
-//     // get user inputs from the DOM:
-//     const name = document.querySelector('#name').value;
-//     const email = document.querySelector('#email').value;
-//     const comment = document.querySelector('#comment').value;
-    
-//     // build the custom tag using template literals:
-//     const template = `
-//         <user-comment name="${name}" email="${email}" comment="${comment}"></user-comment>
-//     `;
-
-//     // add the new tag to the DOM:
-//     document.querySelector('.comments').insertAdjacentHTML('afterbegin', template);
-// };
-
-
-
-// document.querySelector('form').addEventListener('submit', addComment);
+const counter = new Counter(stateManager);
+const commentList = new CommentList(stateManager);
+const form = new Form(stateManager);

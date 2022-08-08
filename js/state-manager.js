@@ -12,7 +12,10 @@ Each comment has:
     4. Timestamp
 */
 
-class StateManager {
+export default class StateManager {
+    // 1. constructor method: 
+    //      sets up the datastore (this.comments array) and
+    //      sets up the subscribers (this.subscribers array)
     constructor() {
         this.comments = [
             {
@@ -26,11 +29,51 @@ class StateManager {
                 email: "adwaina@gmail.com",
                 comment: "text text text text text text text text text text ",
                 timestamp: "8/3/2022 3:15:13PM"
+            },
+            {
+                name: "Monique",
+                email: "mo@gmail.com",
+                comment: "text text text text text text text text text text ",
+                timestamp: "8/4/2022 3:15:13PM"
             }
         ]
+
+        // mailing list.
+        this.subscribers = [];
     }
 
-    // 2. we need a way to update the comments list
+    // 2. Method to add a new comment and to update
+    // subscribers who are listening to the 
+    // "comment-added" event:
+    addComment(newComment){
+        // "push" method of an array appends an item to the bottom
+        this.comments.push(newComment); 
+        console.log(this.comments);
 
-    // 3. we need a way to tell the other components to redraw
+        // I need to notify everyone that a 'comments-updated' event has just 
+        // happened! 
+        // Q: Who do I notify?
+        // A: My subscribers!!! (which are stored in this.subscribers (an array))
+        // 
+        // Q: How do I notify them?
+        // A: I trigger the function they told me to trigger.
+        for(let i = 0; i < this.subscribers.length; i++) {
+            const subscriber = this.subscribers[i];
+            const eventName = subscriber[0];
+            const f = subscriber[1];
+            if (eventName === 'comment-added') {
+                console.log('notifying my subscriber');
+                f(this.comments);
+            }
+        }
+    }
+
+    // 3. method that allows other components to subscribe 
+    // to specific events, and which functions to invoke
+    // when those events are triggered:
+    subscribe(theEvent, theResponse) {
+        this.subscribers.push([
+            theEvent, theResponse
+        ])
+    }
 }
