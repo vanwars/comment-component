@@ -41,6 +41,36 @@ export default class StateManager {
         // mailing list.
         this.subscribers = [];
     }
+    addCommentToStore(comment) {
+        var transaction = this.db.transaction(['comments'], 'readwrite');
+        var comments = transaction.objectStore('comments');
+        console.log(comments);
+        var request = comments.add(comment);
+
+        request.onerror = function(e) {
+            console.log('Error', e.target.error.name);
+        };
+        request.onsuccess = function(e) {
+            console.log('Notify the app!');
+        };
+
+        // Commit: close connection
+        transaction.oncomplete = () => {
+            db.close();
+        };
+    }
+    setStore (db) {
+        console.log('setStore');
+        this.db = db;
+        // console.log(this.db);
+        var transaction = this.db.transaction(['comments'], 'readwrite');
+        var comments = transaction.objectStore('comments')
+        console.log(comments)
+        transaction.oncomplete = () => {
+            db.close();
+        };
+        
+    }
 
     // 2. Method to add a new comment and to update
     // subscribers who are listening to the 
