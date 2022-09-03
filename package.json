@@ -6,7 +6,8 @@
     "dev": "vite serve src",
     "copy": "copyfiles -u 1 src/**/* src/* build",
     "build": "vite build src",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postbuild": "mv src/dist dist"
   },
   "devDependencies": {
     "copyfiles": "^1.2.0",
