@@ -8,18 +8,17 @@ export default defineConfig({
     },
     plugins: [
         VitePWA({
-            base: '', 
             registerType: 'autoUpdate',
             strategies: 'injectManifest',
             injectManifest: {
                 "globPatterns": [
                     "**/*.html",
+                    "/"
                 ],
-            },
-            devOptions: {
-              enabled: true,
-              base: ''
-           }
+            } //,
+            // devOptions: {
+            //     enabled: true
+            // }
         })
     ]
 })
