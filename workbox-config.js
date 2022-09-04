@@ -1,24 +1,20 @@
-import { VitePWA } from 'vite-plugin-pwa'
-import  { defineConfig } from 'vite'
-
+import { VitePWA } from "vite-plugin-pwa";
+import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [
     VitePWA({
-      registerType: 'autoUpdate',
-      strategies: 'injectManifest',
+      registerType: "autoUpdate",
+      strategies: "injectManifest",
       injectManifest: {
-        "globPatterns": [
-            "**/*.html",
-          ],
+        globPatterns: ["**/*.html"],
       },
       buildOptions: {
-        type: "module"
+        type: "module",
       },
       devOptions: {
-        enabled: true
-
-      }
-    })
-  ]
-})
+        enabled: true,
+      },
+    }),
+  ],
+});

@@ -5,7 +5,7 @@
 //     // make some changes to this function
 //     workbox.precaching.precacheAndRoute([
 //         'self.__WB_MANIFEST'
-//     ]); 
+//     ]);
 //     // workbox.routing.registerRoute(
 //     //     /(.*).(?:png|gif|jpg)/,
 //     //     workbox.strategies.networkFirst({
@@ -66,7 +66,7 @@
 //     //       })
 //     //     ]
 //     // });
-      
+
 //     // workbox.routing.registerRoute(/\.html/, args => {
 //     //     return htmlHandler.handle(args);
 //     // });
@@ -81,17 +81,10 @@
 //     //       return response;
 //     //     });
 //     // });
-    
+
 // } else {
 //     console.log(`Boo! Workbox didn't load 😬`);
 // }
-
-
-
-
-
-
-
 
 // importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.1.1/workbox-sw.js')
 // // Note: Ignore the error that Glitch raises about workbox being undefined.
@@ -101,15 +94,15 @@
 //     // make some changes to this function
 //     workbox.precaching.precacheAndRoute([
 //         'self.__WB_MANIFEST'
-//     ]); 
+//     ]);
 //     // // To avoid async issues, we load strategies before we call it in the event listener
 //     // workbox.loadModule('workbox-core')
 //     // workbox.loadModule('workbox-routing')
 //     // workbox.loadModule('workbox-cacheable-response')
 //     // workbox.loadModule('workbox-strategies')
 //     // workbox.loadModule('workbox-expiration')
-//     // pageCache(); 
-//     // googleFontsCache(); 
+//     // pageCache();
+//     // googleFontsCache();
 //     // staticResourceCache();
 //     // imageCache();
 //     // offlineFallback();
@@ -127,33 +120,19 @@
 //     // const cacheName = cacheNames.runtime
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
 if (workbox) {
-    console.log(`Yay! Workbox is loaded 🎉`);
-    // make some changes to this function
-    workbox.precaching.precacheAndRoute([
-        'self.__WB_MANIFEST'
-    ]); 
+  console.log(`Yay! Workbox is loaded 🎉`);
+  // make some changes to this function
+  workbox.precaching.precacheAndRoute(["self.__WB_MANIFEST"]);
 }
 import {
-    pageCache,
-    imageCache,
-    staticResourceCache,
-    googleFontsCache,
-    offlineFallback,
-    } from 'workbox-recipes';
-    
+  pageCache,
+  imageCache,
+  staticResourceCache,
+  googleFontsCache,
+  offlineFallback,
+} from "workbox-recipes";
+
 pageCache();
 
 googleFontsCache();
@@ -163,8 +142,6 @@ staticResourceCache();
 imageCache();
 
 offlineFallback();
-
-
 
 // importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.1.1/workbox-sw.js')
 // // Note: Ignore the error that Glitch raises about workbox being undefined.

@@ -7,13 +7,16 @@
     "dev": "vite serve src",
     "copy": "copyfiles -u 1 src/**/* src/* build",
     "build": "vite build src --emptyOutDir",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "prettier -c .",
+    "fix": "prettier --write ."
   },
   "devDependencies": {
     "copyfiles": "^1.2.0",
     "vite": "^2.9.9",
     "vite-plugin-pwa": "^0.12.3",
-    "workbox-cli": "^3.5.0"
+    "workbox-cli": "^3.5.0",
+    "prettier": "^2.7.1"
   },
   "dependencies": {
     "copy": "^0.3.2",

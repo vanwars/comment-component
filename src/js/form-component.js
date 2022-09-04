@@ -17,14 +17,12 @@ Form component:
 
 */
 
-
 export default class Form {
-
-    // what is a constructor?
-    // brings the instance to life
-    constructor(sm) {
-        this.stateManager = sm;
-        const formTemplate = `
+  // what is a constructor?
+  // brings the instance to life
+  constructor(sm) {
+    this.stateManager = sm;
+    const formTemplate = `
         <form action="#">
             <h2>Add New Comment</h2>
             <div class="row">
@@ -60,40 +58,38 @@ export default class Form {
         </form>
         `;
 
-        document.querySelector('.form-container').innerHTML = formTemplate;
+    document.querySelector(".form-container").innerHTML = formTemplate;
 
-        document.querySelector('form').addEventListener('submit', this.addComment.bind(this));
-    }
+    document
+      .querySelector("form")
+      .addEventListener("submit", this.addComment.bind(this));
+  }
 
-    addComment (ev) {
-        // goal of add comment is to let the state manager know
-        // that a new comment has been added:
-        ev.preventDefault();
+  addComment(ev) {
+    // goal of add comment is to let the state manager know
+    // that a new comment has been added:
+    ev.preventDefault();
 
-        const date = new Date();
-        let dateString = date.toLocaleDateString();
-        dateString += " " + date.toLocaleTimeString();
+    const date = new Date();
+    let dateString = date.toLocaleDateString();
+    dateString += " " + date.toLocaleTimeString();
 
-        const commentObject = {
-            name: document.querySelector('#name').value,
-            email: document.querySelector('#email').value,
-            comment: document.querySelector('#comment').value, 
-            timestamp: dateString
-        }
-        console.log(commentObject);
+    const commentObject = {
+      name: document.querySelector("#name").value,
+      email: document.querySelector("#email").value,
+      comment: document.querySelector("#comment").value,
+      timestamp: dateString,
+    };
+    console.log(commentObject);
 
+    // tell the state manager that we have
+    // a new comment to add:
+    this.stateManager.addComment(commentObject);
 
-        // tell the state manager that we have
-        // a new comment to add:
-        this.stateManager.addComment(commentObject);
-
-
-        // Your Job: how do you clear out your form!!
-        document.querySelector('#name').value = "";
-        document.querySelector('#email').value = "";
-        document.querySelector('#comment').value = "";
-        document.querySelector('#agree').checked = false;
-
-    }
-
+    // Your Job: how do you clear out your form!!
+    document.querySelector("#name").value = "";
+    document.querySelector("#email").value = "";
+    document.querySelector("#comment").value = "";
+    document.querySelector("#agree").checked = false;
+  }
 }

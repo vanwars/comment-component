@@ -1,17 +1,17 @@
 body {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background: #F4F4F4;
-    margin: 0;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f4f4f4;
+  margin: 0;
 }
 header {
-    text-align: center;
-    color: #fff;
-    background: #c06666;
-    margin-bottom: 40px;
-    padding: 20px;
-    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+  text-align: center;
+  color: #fff;
+  background: #c06666;
+  margin-bottom: 40px;
+  padding: 20px;
+  /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
 }
 
 .icon {
@@ -21,53 +21,54 @@ header {
 }
 
 .row {
-    padding: 5px 0;
+  padding: 5px 0;
 }
-label { 
-    width: 100px;
-    text-align: right;
-    padding-right: 10px;
-    display: inline-block;
-    font-weight: bold;
-    vertical-align: top;
+label {
+  width: 100px;
+  text-align: right;
+  padding-right: 10px;
+  display: inline-block;
+  font-weight: bold;
+  vertical-align: top;
 }
-input[type=text], 
-input[type=email],
+input[type="text"],
+input[type="email"],
 textarea {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    width: calc(100% - 150px);
-    padding: 10px;
-    font-size: 1.0em;
-} 
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  width: calc(100% - 150px);
+  padding: 10px;
+  font-size: 1em;
+}
 textarea {
-    min-height: 100px;
+  min-height: 100px;
 }
 button {
-    margin-left: 115px;
-    padding: 10px;
-    font-size: 1.0em;
+  margin-left: 115px;
+  padding: 10px;
+  font-size: 1em;
 }
 
 header h1 {
-    margin: 0;
+  margin: 0;
 }
 
 main {
-    margin-left: 15vw;
-    margin-right: 15vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
 }
 
-.comments, form {
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    margin-bottom: 40px;
-    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+.comments,
+form {
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
 }
 
 .comment {
-    margin-bottom: 40px;
-    /* border-bottom: solid 1px #ccc; */
+  margin-bottom: 40px;
+  /* border-bottom: solid 1px #ccc; */
 }
 
 .user-info {

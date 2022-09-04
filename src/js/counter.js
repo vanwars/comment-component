@@ -1,17 +1,17 @@
 export default class Counter {
-    constructor(stateManager) {
-        stateManager.subscribe('comment-added', this.redraw.bind(this));
-        stateManager.subscribe('comments-loaded', this.redraw.bind(this));
-        this.redraw(stateManager.comments);
-    }
+  constructor(stateManager) {
+    stateManager.subscribe("comment-added", this.redraw.bind(this));
+    stateManager.subscribe("comments-loaded", this.redraw.bind(this));
+    this.redraw(stateManager.comments);
+  }
 
-    redraw(comments) {
-        document.querySelector('.counter-display').innerHTML = `
+  redraw(comments) {
+    document.querySelector(".counter-display").innerHTML = `
             <h2>This Page has ${comments.length} Comment(s)</h2>
         `;
-    }
+  }
 
-    greeting() {
-        console.log("Hello world!");
-    }
+  greeting() {
+    console.log("Hello world!");
+  }
 }
