@@ -12,34 +12,31 @@ Each comment has:
     4. Timestamp
 */
 
+import Database from './database.js';
+
 export default class StateManager {
     // 1. constructor method: 
     //      sets up the datastore (this.comments array) and
     //      sets up the subscribers (this.subscribers array)
     constructor() {
-        this.comments = [
-            {
-                name: "Julius",
-                email: "julius@gmail.com",
-                comment: "Here is my comment!",
-                timestamp: "7/29/2022 3:15:13PM"
-            },
-            {
-                name: "Adwaina",
-                email: "adwaina@gmail.com",
-                comment: "text text text text text text text text text text ",
-                timestamp: "8/3/2022 3:15:13PM"
-            },
-            {
-                name: "Monique",
-                email: "mo@gmail.com",
-                comment: "text text text text text text text text text text ",
-                timestamp: "8/4/2022 3:15:13PM"
-            }
-        ]
-
-        // mailing list.
+        this.comments = []
         this.subscribers = [];
+        this.database = new Database();
+        this.loadComments();
+    }
+    loadComments() {
+        // 1. create a callback function that will fire after the
+        // favorites loaded:
+        const callbackFunction = function (commentList) {
+            console.log(commentList);
+            this.comments = commentList;
+            this.notify('comments-loaded', this.comments);
+        }; 
+
+        // 2. Invoke the "getAll" method, with the callback function
+        // as an argument. When getAll finishes loading the favorites,
+        // it will fire the callback function with the favorites.
+        this.database.getAll(callbackFunction.bind(this));
     }
     addCommentToStore(comment) {
         var transaction = this.db.transaction(['comments'], 'readwrite');
@@ -77,23 +74,30 @@ export default class StateManager {
     // "comment-added" event:
     addComment(newComment){
         // "push" method of an array appends an item to the bottom
+        newComment.id = this.comments.length + 1;
         this.comments.push(newComment); 
         console.log(this.comments);
+        console.log("I am about to save the movie to the DB!");
+        this.database.addOrUpdate(newComment, function () {
+            console.log('Successfully added to the database');
+        });
+        this.notify('comment-added', this.comments);
+    }
 
-        // I need to notify everyone that a 'comments-updated' event has just 
-        // happened! 
-        // Q: Who do I notify?
-        // A: My subscribers!!! (which are stored in this.subscribers (an array))
-        // 
-        // Q: How do I notify them?
-        // A: I trigger the function they told me to trigger.
-        for(let i = 0; i < this.subscribers.length; i++) {
+    notify(eventName, data) {
+        // loops through all of the subscribers
+        // and invokes the subscriber's function if they're interested
+        // in the particular event.
+        for (let i = 0; i < this.subscribers.length; i++) {
             const subscriber = this.subscribers[i];
-            const eventName = subscriber[0];
-            const f = subscriber[1];
-            if (eventName === 'comment-added') {
-                console.log('notifying my subscriber');
-                f(this.comments);
+            
+            const subscriberEvent = subscriber[0];
+            const callbackFunction = subscriber[1];
+
+            // is the event that was just fired something that
+            // the subscriber is interested in?
+            if (eventName == subscriberEvent) {
+                callbackFunction(data);
             }
         }
     }

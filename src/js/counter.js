@@ -1,6 +1,7 @@
 export default class Counter {
     constructor(stateManager) {
         stateManager.subscribe('comment-added', this.redraw.bind(this));
+        stateManager.subscribe('comments-loaded', this.redraw.bind(this));
         this.redraw(stateManager.comments);
     }
 
