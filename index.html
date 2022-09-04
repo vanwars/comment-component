@@ -31,6 +31,19 @@
 
     <!-- Kicks off your web application -->
     
-
+    <!-- Registers the service worker, which is stored at sw.js-->
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js', { scope: '/', type: 'module' })
+            .then(registration => {
+                console.log(`Service Worker registered! Scope: ${registration.scope}`);
+            })
+            .catch(err => {
+                console.log(`Service Worker registration failed: ${err}`);
+            });
+        });
+    }
+    </script>
   </body>
 </html>
