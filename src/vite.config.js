@@ -15,10 +15,12 @@ export default defineConfig({
                     "**/*.html",
                     "/"
                 ],
-            } //,
-            // devOptions: {
-            //     enabled: true
-            // }
+                swSrc: './src/public/sw.js',
+                swDest: 'sw.js',
+            },
+            devOptions: {
+                enabled: true
+            }
         })
     ]
 })
