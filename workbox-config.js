@@ -12,6 +12,9 @@ export default defineConfig({
             "**/*.html",
           ],
       },
+      buildOptions: {
+        type: "module"
+      },
       devOptions: {
         enabled: true
 
