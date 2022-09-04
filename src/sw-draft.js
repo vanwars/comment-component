@@ -93,7 +93,7 @@
 
 
 
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.1.1/workbox-sw.js')
+// importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.1.1/workbox-sw.js')
 // // Note: Ignore the error that Glitch raises about workbox being undefined.
 // if (workbox) {
 //     console.log(self);
