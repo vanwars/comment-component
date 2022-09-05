@@ -1,5 +1,5 @@
 body * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -12,16 +12,16 @@ body {
   margin-left: 15vw;
   margin-right: 15vw;
   display: block;
-  background: #F4F4F4;
+  background: #f4f4f4;
 }
 
 header {
-    text-align: center;
-    color: #fff;
-    background: #c06666;
-    margin-bottom: 40px;
-    padding: 20px;
-    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+  text-align: center;
+  color: #fff;
+  background: #c06666;
+  margin-bottom: 40px;
+  padding: 20px;
+  /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
 }
 
 .icon {
@@ -31,76 +31,75 @@ header {
 }
 
 .row {
-    padding: 5px 0;
+  padding: 5px 0;
 }
-form label { 
-    width: 200px;
-    text-align: right;
-    padding-right: 10px;
-    display: inline-block;
-    font-weight: bold;
-    vertical-align: top;
+form label {
+  width: 200px;
+  text-align: right;
+  padding-right: 10px;
+  display: inline-block;
+  font-weight: bold;
+  vertical-align: top;
 }
-input[type=text], 
-input[type=email],
-input[type=number],
+input[type="text"],
+input[type="email"],
+input[type="number"],
 select,
 textarea {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    width: calc(100% - 250px);
-    padding: 10px;
-    font-size: 1.0em;
-} 
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  width: calc(100% - 250px);
+  padding: 10px;
+  font-size: 1em;
+}
 .pinkify {
-    background: pink;
+  background: pink;
 }
 
 textarea {
-    min-height: 100px;
+  min-height: 100px;
 }
 form button:first-child {
-    margin-left: 205px;
+  margin-left: 205px;
 }
 
 button {
-    padding: 10px;
-    font-size: 1.0em;
+  padding: 10px;
+  font-size: 1em;
 }
 
 header h1 {
-    margin: 0;
+  margin: 0;
 }
 
 main {
-    margin-left: 15vw;
-    margin-right: 15vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
 }
 
 form {
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    margin-bottom: 40px;
-    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
 }
 
-
 .movie {
-    display: grid;
-    grid-template-columns: 150px auto;
-    column-gap: 50px;
-    margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 150px auto;
+  column-gap: 50px;
+  margin-bottom: 40px;
 }
 
 .movie img {
-    width: 100%;
+  width: 100%;
 }
 
 textarea {
-    width: 100%;
-    min-height: 120px;
+  width: 100%;
+  min-height: 120px;
 }
 
-#show_notes{
-    float: right;
+#show_notes {
+  float: right;
 }

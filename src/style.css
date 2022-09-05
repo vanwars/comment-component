@@ -53,10 +53,10 @@ header h1 {
 }
 
 .main-container {
-    margin-left: 5vw;
-    margin-right: 10vw;
-    display: grid;
-    grid-template-columns: 300px auto;
+  margin-left: 5vw;
+  margin-right: 10vw;
+  display: grid;
+  grid-template-columns: 300px auto;
 }
 /* main {
 } */
